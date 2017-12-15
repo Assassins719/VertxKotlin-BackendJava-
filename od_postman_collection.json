@@ -1,0 +1,614 @@
+{
+	"info": {
+		"name": "operadoodle",
+		"_postman_id": "d1cb585a-3dac-5e6c-3d2d-440b9bdb8672",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get event",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWI6YWI="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"something\",\"date\":\"2017-07-18T00:22:06+0200\",\n\"prodId\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"events",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWI6YWI="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"something\",\"date\":\"2017-11-15T14:40:13.825+01\", \"venueOverride\":1,\"prodId\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"events"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update event",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWI6YWI="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"something\",\"date\":\"2017-11-15T14:40:13.825+01\", \"venueOverride\":null, \"prodId\":1,\"castOverride\":[{\"part\":1,\"artist\":1}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/events/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"events",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list events",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWI6YWI="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"something\",\"date\":\"2017-07-18T00:22:06+0200\",\n\"prodId\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/events?offset=0&location=55,13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"events"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"equals": true
+						},
+						{
+							"key": "location",
+							"value": "55,13",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list works",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"New production2\",\"workId\":1,\"work\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/works?startsWith=Ov&creator=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"works"
+					],
+					"query": [
+						{
+							"key": "startsWith",
+							"value": "Ov",
+							"equals": true
+						},
+						{
+							"key": "creator",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Hamlet\",\"parts\":[{\"id\":1,\"name\":\"Hamlet\"},{\"id\":2,\"name\":\"Ofelia\"}],\"authors\":[{\"artist\":1,\"role\":\"Composer\"}]}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/works/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"works",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create work",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Hamlet\",\"parts\":[\"Hamlet\",\"Ofelia\"],\"authors\":null}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/works",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"works"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update work,add part \"ofelia\"",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Hamlet\",\"parts\":[{\"id\":1,\"name\":\"Hamlet\"},{\"name\":\"Ofelia2\"}],\"authors\":[{\"artist\":1,\"role\":\"Composer\"}]}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/works/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"works",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update work,rename part \"ofelia\"",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Hamlet\",\"parts\":[{\"id\":1,\"name\":\"Hamlet\"},{\"name\":\"Ofelia2\"}],\"authors\":[{\"artist\":1,\"role\":\"Composer\"}]}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/works/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"works",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create production",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"New production\",\"works\":[1]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/productions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"productions"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list productions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/v1/productions?offset=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"productions"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0",
+							"equals": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update produciton",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"New productio1n\",\"works\":[1],\"venue\":1,\"cast\":[{\"artist\":1,\"part\":1}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/productions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"productions",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get production",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/v1/productions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"productions",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get venue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"New production2\",\"workId\":1,\"work\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/venues/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"venues",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list venues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"New production2\",\"workId\":1,\"work\":1}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/venues?startsWith=mal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"venues"
+					],
+					"query": [
+						{
+							"key": "startsWith",
+							"value": "mal",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update venue",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"name\":\"Malmoe opera\",\"lat\":55.0,\"lon\":23.0,\"url\":\"http://ga.se\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/venues/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"venues",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create venue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"name\":\"Malmoe opera\",\"lat\":55.0,\"lon\":11.0}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/venues/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"venues",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update artist",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"William Shake2\",\"works\":[{\"id\":1}],\"traits\":[\"Composer\"],\"url\":\"asdf\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/artists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"artists",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list artists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/v1/artists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"artists"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create artist/composer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"William Shakey\",\"works\":[1]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/artists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"artists"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get artist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/v1/artists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"artists",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
